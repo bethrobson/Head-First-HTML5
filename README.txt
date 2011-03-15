@@ -6,3 +6,5 @@ and Elisabeth Robson
 
 More here TBD
 
+Can't wait for this book to come out -- how about some hints of what's coming next?
+
