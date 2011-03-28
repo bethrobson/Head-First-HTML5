@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>99 bottles</title>
+<meta charset="utf-8">
+</head>
+<body>
+
+<script>
+function sing() {
+	// substitute your favorite drink below
+	var drink = "Red Bull";
+	var lyrics = "";
+	for (var cans = 99; cans > 0; cans--) {
+		lyrics = lyrics + cans + " cans of " + drink + " on the wall <br />";
+		lyrics = lyrics + cans + " cans of " + drink + "<br />";
+		lyrics = lyrics + "Take one down, pass it around, <br />";
+		if (cans > 1) {
+			lyrics += cans-1 + " cans of " + drink + " on the wall <br />";
+		}
+		else {
+			lyrics += "No more cans of " + drink + " on the wall <br />";
+		}
+	}
+	document.write(lyrics);
+}
+sing();
+</script>
+
+</body>
+</html>
+
