@@ -130,35 +130,28 @@ function degreesToRadians(degrees) {
 
 
 
-// Ready Bake Code
+// Code from Chapter 2, reusing here
 
-function updateTweetsMenu(response) {
+function updateTweets(response) {
     var tweets = response.results;
+	var tweetsSelection = document.getElementById("tweets");
+
 	// add all tweets to the tweets menu
     tweets.forEach(function(tweet) {
-		addTweetToMenu(tweet.text);
+		// create option
+		var option = document.createElement("option");
+		option.text = tweet.text;
+
+		// strip any quotes out of the tweet so they don't mess up our option
+		option.value = tweet.text.replace("\"", "'");
+
+		// add option to select
+		tweetsSelection.options.add(option);
     });
 	// make sure the top tweet is selected
-	var tweetsMenu = document.getElementById("tweets");
-	tweetsMenu.selectedIndex = 0;
-	var previewButton = document.getElementById("previewButton");
-	previewButton.disabled = false;
-
+	tweetsSelection.selectedIndex = 0;
 }
 
-
-function addTweetToMenu(text) {
-	// create option
-	var option = document.createElement("option");
-	option.text = text;
-
-	// strip any quotes out of the tweet so they don't mess up our option
-	option.value = text.replace(/["']{1}/gi,"");
-	
-	// add option to select
-	var tweetsMenu = document.getElementById("tweets");
-	tweetsMenu.options.add(option);
-}
 
 // Splits one long string into multiple lines of 
 // no more than 60 characters each. Returns an

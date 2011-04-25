@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <script>
 window.onload = function() {
-	var canvas = document.getElementById("tshirtdesign");
+	var canvas = document.getElementById("myCanvas");
 	var context = canvas.getContext("2d");
 
 	drawTriangle(canvas, context);
@@ -22,10 +22,18 @@ function drawTriangle(canvas, context) {
 	context.fill();
 }
 </script>
+<style>
+body {
+}
+canvas { 
+	border: 1px solid black;
+	background-color: grey;
+}
+</style>
 <title>Triangle</title>
 </head>
 <body>
-<canvas width="600" height="600" id="tshirtdesign">
+<canvas width="300" height="300" id="myCanvas">
 	<p>This example requires a browser that supports the
 	<a href="http://www.w3.org/html/wg/html5/">HTML5</a> 
 	&lt;canvas&gt; feature.</p>
