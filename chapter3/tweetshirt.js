@@ -29,7 +29,7 @@ function previewHandler() {
 		}
 	}
 	drawText(canvas, context);
-	drawImage(canvas, context);
+	drawBird(canvas, context);
 }
 
 // This is where we'll set the background color
@@ -113,7 +113,7 @@ function drawText(canvas, context) {
 }
 
 // draws the twitter bird image
-function drawImage(canvas, context) {
+function drawBird(canvas, context) {
 	var twitterBird = new Image();
 	twitterBird.src = "twitterBird.png";
 	twitterBird.onload = function() {
