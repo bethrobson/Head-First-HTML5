@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>My Playlist</title>
+<meta charset="utf-8">
+<link rel="icon" 
+      type="image/ico" 
+      href="http://wickedlysmart.com/favicon.ico">
+<script>
+function addSongs() {
+	var song1 = document.getElementById("song1");
+	var song2 = document.getElementById("song2");
+	var song3 = document.getElementById("song3");
+
+	song1.innerHTML = "Rollercoaster, by Everything But The Girl";
+	song2.innerHTML = "Good Enough, by Evanescence";
+	song3.innerHTML = "Gypsy, by Stevie Nicks";
+}
+window.onload = addSongs;
+</script>
+</head>
+<body>
+
+<h1>My awesome playlist</h1>
+<ul id="playlist">
+<li id="song1"></li>
+<li id="song2"></li>
+<li id="song3"></li>
+</ul>
+
+</body>
+</html>
