@@ -1,0 +1,43 @@
+body {
+	font-family: arial, sans-serif;
+}
+
+ul#playlist {
+	border: 1px solid #a9a9a9;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	margin-top: 10px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+ul#playlist li {
+	border-bottom: 1px solid #a9a9a9;
+	padding: 10px;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e3e3e3));
+}
+
+ul#playlist li.selected {
+	background-color: #e9e9e9;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffe0), to(#ffffa3));
+}
+
+ul#playlist li:last-child {
+	border-bottom: none;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+}
+ul#playlist li:first-child {
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-topleft: 5px;
+}
+
