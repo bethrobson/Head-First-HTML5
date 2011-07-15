@@ -44,8 +44,6 @@ function displayLocation(position) {
 function computeDistance(startCoords, destCoords) {
 	startLatRads = degreesToRadians(startCoords.latitude);
 	startLongRads = degreesToRadians(startCoords.longitude);
-	//startLatRads = degreesToRadians(34.20472);
-	//startLongRads = degreesToRadians(-90.57528);
 	destLatRads = degreesToRadians(destCoords.latitude);
 	destLongRads = degreesToRadians(destCoords.longitude);
 
