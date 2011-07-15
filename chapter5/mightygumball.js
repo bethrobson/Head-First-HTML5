@@ -10,11 +10,15 @@ function init() {
 	getSales();
 }
 
+//
 // This function is written using XMLHttpRequest Level 1, so if you're
 // using IE or Opera, or a really old version of Safari, Firefox or
 // Chrome, you can use this instead of Level 2 (below).
+//
 function getSales_XHRv1() {
-	var url = "sales.json";
+	// change the URL to match the location where you
+	// put the sales.json file
+	var url = "http://localhost/gumball/sales.json";
 	var request = new XMLHttpRequest();
 	request.open("GET", url);
 	request.onreadystatechange = function() {
@@ -25,9 +29,11 @@ function getSales_XHRv1() {
 	request.send(null);
 }
 
+//
 // With XMLHttpRequest Level 2 (implemented in new versions of Firefox, Safari
 // and Chrome) you can check progress and check for the "load" event with the
 // onload event handler instead of checking the onreadystatechange
+//
 function getSales() {
 	// change the URL to match the location where you
 	// put the sales.json file
