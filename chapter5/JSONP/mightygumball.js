@@ -21,7 +21,7 @@ function handleRefreshv1() {
 	var newScript = document.createElement("script");
 	newScript.setAttribute("src", url);
 	var head = document.getElementsByTagName("head")[0];
-	head.appendChild(newScript, head);
+	head.appendChild(newScript);
 }
 
 function handleRefresh() {
@@ -35,7 +35,7 @@ function handleRefresh() {
 	var script = document.getElementById("jsonp");
 	if (script == null) {
 		var head = document.getElementsByTagName("head")[0];
-		head.appendChild(newScript, head);
+		head.appendChild(newScript);
 	}
 	else {
 		var head = script.parentNode;
