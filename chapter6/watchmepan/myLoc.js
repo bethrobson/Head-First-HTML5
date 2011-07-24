@@ -48,10 +48,10 @@ function displayLocation(position) {
 // between two lat/long points
 //
 function computeDistance(startCoords, destCoords) {
-	startLatRads = degreesToRadians(startCoords.latitude);
-	startLongRads = degreesToRadians(startCoords.longitude);
-	destLatRads = degreesToRadians(destCoords.latitude);
-	destLongRads = degreesToRadians(destCoords.longitude);
+	var startLatRads = degreesToRadians(startCoords.latitude);
+	var startLongRads = degreesToRadians(startCoords.longitude);
+	var destLatRads = degreesToRadians(destCoords.latitude);
+	var destLongRads = degreesToRadians(destCoords.longitude);
 
 	var Radius = 6371; // radius of the Earth in km
 	var distance = Math.acos(Math.sin(startLatRads) * Math.sin(destLatRads) + 
@@ -115,7 +115,7 @@ function displayError(error) {
 		3: "Request timeout"
 	};
 	var errorMessage = errorTypes[error.code];
-	if (errorTypes == 0 || errorTypes == 2) {
+	if (error.code == 0 || error.code == 2) {
 		errorMessage = errorMessage + " " + error.message;
 	}
 	var div = document.getElementById("location");

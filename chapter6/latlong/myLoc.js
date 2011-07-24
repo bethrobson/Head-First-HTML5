@@ -32,7 +32,7 @@ function displayError(error) {
 		3: "Request timeout"
 	};
 	var errorMessage = errorTypes[error.code];
-	if (errorTypes == 0 || errorTypes == 2) {
+	if (error.code == 0 || error.code == 2) {
 		errorMessage = errorMessage + " " + error.message;
 	}
 	var div = document.getElementById("location");
