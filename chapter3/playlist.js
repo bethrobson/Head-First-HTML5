@@ -1,3 +1,5 @@
+/* playlist.js */
+
 window.onload = init;
 
 function init() {

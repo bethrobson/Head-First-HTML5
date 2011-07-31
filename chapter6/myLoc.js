@@ -5,7 +5,7 @@ var map = null;
 var ourCoords =  {
 	latitude: 47.624851,
 	longitude: -122.52099
-}
+};
 var prevCoords = null;
 
 window.onload = getMyLocation;

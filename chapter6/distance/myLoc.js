@@ -3,7 +3,7 @@
 var ourCoords =  {
 	latitude: 47.624851,
 	longitude: -122.52099
-}
+};
 
 window.onload = getMyLocation;
 

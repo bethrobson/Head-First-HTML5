@@ -1,3 +1,5 @@
+/* manager.js */
+
 window.onload = function() {
 	if (Worker == "undefined") {
 		document.getElementById("output").innerHTML = "Bummer, no Web Workers";
