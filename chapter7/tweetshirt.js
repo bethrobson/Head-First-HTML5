@@ -2,7 +2,7 @@
 
 window.onload = function() {
 	var button = document.getElementById("previewButton");
-	button.addEventListener("click", previewHandler, false);
+	button.onclick = previewHandler;
 
 	// Easter Egg
 	makeImage();
@@ -79,14 +79,14 @@ function drawText(canvas, context) {
 	var fgColor = selectObj[index].value;
 
 	context.fillStyle = fgColor;
-	context.font = "bold 1em Helvetica";
+	context.font = "bold 1em sans-serif";
 	context.textAlign = "left";
 	context.fillText("I saw this tweet", 20, 40);
 
 
 	// draw the tweet!
-	var selectObj = document.getElementById("tweets");
-	var index = selectObj.selectedIndex;
+	selectObj = document.getElementById("tweets");
+	index = selectObj.selectedIndex;
 	var tweet = selectObj[index].value;
 	context.font = "italic 1.2em serif";
 	context.fillText(tweet, 30, 100);
@@ -106,7 +106,7 @@ function drawText(canvas, context) {
 	}
 */
 
-	context.font = "bold 1em Helvetica";
+	context.font = "bold 1em sans-serif";
 	context.textAlign = "right";
 	context.fillText("and all I got was this lousy t-shirt!", 
 		canvas.width-20, canvas.height-40);
@@ -154,10 +154,13 @@ function updateTweets(tweets) {
 // array of the lines.
 function splitIntoLines(str) {
 	var strs = new Array();
-	var max = str.length % 60;
-	for (var i = 1; i < max; i++) {
-		strs[i-1] = str.substr(0, 60);
-		str = str.substr(60, str.length);
+	var space = str.indexOf(' ', 60);
+	strs[0] = str.substring(0, space);
+	strs[1] = str.substring(space+1);
+	if (strs[1].length > 60) {
+		space = strs[1].indexOf(' ', 60);
+		strs[1] = strs[1].substring(space+1);
+		strs[2] = strs[1].substring(0, space);
 	}
 	return strs;
 }
