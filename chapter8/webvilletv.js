@@ -12,7 +12,7 @@ window.onload = function() {
 	video.src = playlist[position] + getFormatExtension();
 	video.load();
 	video.play();
-}
+};
 
 function nextVideo() {
 	position++;

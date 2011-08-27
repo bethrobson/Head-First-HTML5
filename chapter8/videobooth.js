@@ -138,7 +138,9 @@ function processFrame(e) {
 		var r = frame.data[i * 4 + 0];
 		var g = frame.data[i * 4 + 1];
 		var b = frame.data[i * 4 + 2];
-		if (effectFunction) effectFunction(i, r, g, b, frame.data);
+		if (effectFunction) {
+			effectFunction(i, r, g, b, frame.data);
+		}
 	}
 	display.putImageData(frame, 0, 0);
 
@@ -182,7 +184,7 @@ function western(pos, r, g, b, data) {
 }
 
 function scifi(pos, r, g, b, data) {
-	var offset =  pos * 4;
+	var offset = pos * 4;
 	data[offset] = Math.round(255 - r) ;
 	data[offset+1] = Math.round(255 - g) ;
 	data[offset+2] = Math.round(255 - b) ;
