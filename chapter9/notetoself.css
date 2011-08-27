@@ -38,6 +38,8 @@ ul#stickies li {
 	-webkit-transition: all 0.5s ease-in;
 	-moz-transition: all 0.5s ease-in;
 	-o-transition: all 0.5s ease-in;
+	-ms-transition: all 0.5s ease-in;
+	transition: all 0.5s ease-in;
 	overflow: hidden;
 } 
 
@@ -53,18 +55,24 @@ ul#stickies li:nth-child(even) {
 	-webkit-transform: rotate(2deg);
 	-moz-transform: rotate(2deg);
 	-o-transform: rotate(2deg);
+	-ms-transform: rotate(2deg);
+	transform: rotate(2deg);
 }
 
 ul#stickies li:nth-child(odd) {
 	-webkit-transform: rotate(-1deg);
 	-moz-transform: rotate(-1deg);
 	-o-transform: rotate(-1deg);
+	-ms-transform: rotate(-1deg);
+	transform: rotate(-1deg);
 }
 
 ul#stickies li:nth-child(3n) {
 	-webkit-transform: rotate(1deg);
 	-moz-transform: rotate(1deg);
 	-o-transform: rotate(1deg);
+	-ms-transform: rotate(1deg);
+	transform: rotate(1deg);
 }
 
 /* 
@@ -78,6 +86,8 @@ ul#stickies li:hover {
 	-webkit-transform: rotate(0deg) scale(1.25);
 	-moz-transform: rotate(0deg) scale(1.25);
 	-o-transform: rotate(0deg) scale(1.25);
+	-ms-transform: rotate(0deg) scale(1.25);
+	transform: rotate(0deg) scale(1.25);
 	z-index: 10;
 }
 

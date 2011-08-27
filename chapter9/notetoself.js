@@ -12,14 +12,14 @@ function init() {
 
 	for (var i = 0; i < localStorage.length; i++) {
 		var key = localStorage.key(i);
-		if (key.substr(0, 6) == "sticky") {
+		if (key.substring(0, 6) == "sticky") {
 			var value = localStorage.getItem(key);
 			addStickyToDOM(value);
 		}
 	}
 }
 
-function createSticky(e) {
+function createSticky() {
 	var value = document.getElementById("note_text").value;
 	var key = "sticky_" + localStorage.length;
 	localStorage.setItem(key, value);
@@ -29,13 +29,11 @@ function createSticky(e) {
 
 
 function addStickyToDOM(value) {
-	var stickes = document.getElementById("stickies");
+	var stickies = document.getElementById("stickies");
 	var sticky = document.createElement("li");
 	var span = document.createElement("span");
 	span.setAttribute("class", "sticky");
 	span.innerHTML = value;
-	//var textNode = document.createTextNode(value);
-	//span.appendChild(textNode);
 	sticky.appendChild(span);
 	stickies.appendChild(sticky);
 }

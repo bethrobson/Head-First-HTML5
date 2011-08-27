@@ -46,7 +46,7 @@ function getStickiesArray() {
 	return stickiesArray;
 }
 
-function createSticky(e) {
+function createSticky() {
 	var stickiesArray = getStickiesArray();
 	var currentDate = new Date();
 	var key = "sticky_" + currentDate.getTime();

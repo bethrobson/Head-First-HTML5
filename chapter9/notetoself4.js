@@ -33,7 +33,7 @@ function getStickiesArray() {
 	return stickiesArray;
 }
 
-function createSticky(e) {
+function createSticky() {
 	var stickiesArray = getStickiesArray();
 	var value = document.getElementById("note_text").value;
 	var colorSelectObj = document.getElementById("note_color");
