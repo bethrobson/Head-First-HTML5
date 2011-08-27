@@ -70,7 +70,6 @@ window.onload = function() {
 		worker.postMessage("ping");
 	}
 }
-
 // bonus!
 window.onload = function() {
 	var numWorkers = 3;
@@ -83,8 +82,8 @@ window.onload = function() {
 		workers.push(worker);
 	}
 	for (var i = 0; i < workers.length; i++) {
-		worker.postMessage("ping");
+		workers[i].postMessage("ping");
 	}
 }
-
 */
+
