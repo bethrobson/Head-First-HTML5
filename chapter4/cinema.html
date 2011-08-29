@@ -40,7 +40,7 @@ function Movie(title, genre, rating, showtimes) {
 	this.getNextShowing = function() {
 		var now = new Date().getTime();
 		for (var i = 0; i < this.showtimes.length; i++) {
-			var showtime = getTime(this.showtimes[i]);
+			var showtime = getTimeFromString(this.showtimes[i]);
 			if ((showtime - now) > 0) {
 				return "Next showing of " + this.title + " is " + this.showtimes[i];
 			}
@@ -57,7 +57,7 @@ var movie1 = {
 	getNextShowing: function() {
 		var now = new Date().getTime();
 		for (var i = 0; i < this.showtimes.length; i++) {
-			var showtime = getTime(this.showtimes[i]);
+			var showtime = getTimeFromString(this.showtimes[i]);
 			if ((showtime - now) > 0) {
 				return "Next showing of " + this.title + " is " + this.showtimes[i];
 			}
@@ -73,7 +73,7 @@ var movie2 = {
 	getNextShowing: function() {
 		var now = new Date().getTime();
 		for (var i = 0; i < this.showtimes.length; i++) {
-			var showtime = getTime(this.showtimes[i]);
+			var showtime = getTimeFromString(this.showtimes[i]);
 			if ((showtime - now) > 0) {
 				return "Next showing of " + this.title + " is " + this.showtimes[i];
 			}
@@ -84,7 +84,7 @@ var movie2 = {
 function getNextShowing(movie) {
 	var now = new Date().getTime();
 	for (var i = 0; i < movie.showtimes.length; i++) {
-		var showtime = getTime(movie.showtimes[i]);
+		var showtime = getTimeFromString(movie.showtimes[i]);
 		if ((showtime - now) > 0) {
 			return "Next showing of " + movie.title + " is " + movie.showtimes[i];
 		}
@@ -92,7 +92,7 @@ function getNextShowing(movie) {
 	return null;
 }
 
-function getTime(str) {
+function getTimeFromString(str) {
 	var theTime = new Date();
 	var time = str.match(/(\d+)(?::(\d\d))?\s*(p?)/);
 	theTime.setHours( parseInt(time[1]) + (time[3] ? 12 : 0) );
