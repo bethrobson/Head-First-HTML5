@@ -13,37 +13,8 @@ function init() {
 	handleRefresh();
 }
 
-function handleRefreshv1() {
-	var url = "http://gumball.wickedlysmart.com" +
-				"?callback=updateSales" +
-				"&lastreporttime=" + lastReportTime +
-				"&random=" + (new Date()).getTime();
-	var newScript = document.createElement("script");
-	newScript.setAttribute("src", url);
-	var head = document.getElementsByTagName("head")[0];
-	head.appendChild(newScript);
-}
-
-function handleRefreshv2() {
-	var url = "http://gumball.wickedlysmart.com" +
-				"?callback=updateSales" +
-				"&lastreporttime=" + lastReportTime +
-				"&random=" + (new Date()).getTime();
-	var newScript = document.createElement("script");
-	newScript.setAttribute("src", url);
-	newScript.setAttribute("id", "jsonp");
-	var script = document.getElementById("jsonp");
-	if (script == null) {
-		var head = document.getElementsByTagName("head")[0];
-		head.appendChild(newScript);
-	}
-	else {
-		var head = script.parentNode;
-		head.replaceChild(newScript, script);
-	}
-}
-
 function handleRefresh() {
+	console.log("here");
 	var url = "http://gumball.wickedlysmart.com" +
 				"?callback=updateSales" +
 				//"&lastreporttime=" + lastReportTime +
@@ -52,12 +23,11 @@ function handleRefresh() {
 	newScriptElement.setAttribute("src", url);
 	newScriptElement.setAttribute("id", "jsonp");
 	var oldScriptElement = document.getElementById("jsonp");
+	var head = document.getElementsByTagName("head")[0];
 	if (oldScriptElement == null) {
-		var head = document.getElementsByTagName("head")[0];
 		head.appendChild(newScriptElement);
 	}
 	else {
-		var head = script.parentNode;
 		head.replaceChild(newScriptElement, oldScriptElement);
 	}
 }
