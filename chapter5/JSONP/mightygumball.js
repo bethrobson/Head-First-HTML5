@@ -24,7 +24,7 @@ function handleRefreshv1() {
 	head.appendChild(newScript);
 }
 
-function handleRefresh() {
+function handleRefreshv2() {
 	var url = "http://gumball.wickedlysmart.com" +
 				"?callback=updateSales" +
 				"&lastreporttime=" + lastReportTime +
@@ -40,6 +40,25 @@ function handleRefresh() {
 	else {
 		var head = script.parentNode;
 		head.replaceChild(newScript, script);
+	}
+}
+
+function handleRefresh() {
+	var url = "http://gumball.wickedlysmart.com" +
+				"?callback=updateSales" +
+				//"&lastreporttime=" + lastReportTime +
+				"&random=" + (new Date()).getTime();
+	var newScriptElement = document.createElement("script");
+	newScriptElement.setAttribute("src", url);
+	newScriptElement.setAttribute("id", "jsonp");
+	var oldScriptElement = document.getElementById("jsonp");
+	if (oldScriptElement == null) {
+		var head = document.getElementsByTagName("head")[0];
+		head.appendChild(newScriptElement);
+	}
+	else {
+		var head = script.parentNode;
+		head.replaceChild(newScriptElement, oldScriptElement);
 	}
 }
 
