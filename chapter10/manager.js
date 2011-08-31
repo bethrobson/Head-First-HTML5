@@ -42,7 +42,7 @@ window.onload = function() {
 	}
 
 	for (var i = 5; i > 0; i--) {
-		worker.postMessage("ping");
+		worker.postMessage("pong");
 	}
 }
 
@@ -58,6 +58,7 @@ window.onload = function() {
 }
 
 // exercise 4
+// Be a little careful with this one
 window.onload = function() {
 	var worker = new Worker("worker.js");
 	worker.onmessage = function(event) {
@@ -70,7 +71,7 @@ window.onload = function() {
 		worker.postMessage("ping");
 	}
 }
-// bonus!
+// exercise... bonus!
 window.onload = function() {
 	var numWorkers = 3;
 	var workers = [];
@@ -85,5 +86,6 @@ window.onload = function() {
 		workers[i].postMessage("ping");
 	}
 }
+
 */
 

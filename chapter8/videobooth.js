@@ -30,6 +30,8 @@ window.onload = function() {
 	}
 
 	// add click handlers to video play
+	//video.onplay = processFrame;
+	//video.onended = endedHandler;
 	video.addEventListener("play", processFrame, false);
 	video.addEventListener("ended", endedHandler, false);
 
