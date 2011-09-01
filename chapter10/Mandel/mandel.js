@@ -20,7 +20,7 @@ function init() {
 	//  values to the click handler.
 	//
 	canvas.onclick = function(event) {
-		handleClick(event.x, event.y);
+		handleClick(event.clientX, event.clientY);
 	};
 	//
 	// When you resize the browser window, we need
@@ -121,8 +121,8 @@ function reassignWorker(worker) {
 function handleClick(x, y) {
 	var width = r_max - r_min;
 	var height = i_min - i_max;
-	var click_r = r_min + width * x / canvas.width;
-	var click_i = i_max + height * y / canvas.height;
+	var click_r = r_min + ((width * x) / canvas.width);
+	var click_i = i_max + ((height * y) / canvas.height);
 
 	var zoom = 8;
 
