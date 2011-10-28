@@ -1,6 +1,7 @@
-This repository contains code for Head First HTML5 (coming end of 2011).
+This repository contains code for Head First HTML5 Programming 
+(October, 2011).
 
-Head First HTML5
+Head First HTML5 Programming
 by Eric Freeman
 and Elisabeth Robson
 
@@ -13,8 +14,11 @@ Chapter 6: Extroverted Apps - JavaScript and Web Services
 Chapter 7: The Canvas - Bring out your Inner Artist
 Chapter 8: Video (with special guest, The Canvas) - Not Your Father's TV
 Chapter 9: A Little More Closet Space - Web Storage
-Chapter 10: Web Workers
+Chapter 10: Putting JavaScript to Work - Web Workers
 Appendix: Stuff we didn't cover, where to go from here
 
-http://wickedlysmart.com
+http://wickedlysmart.com/hfhtml5/
+
+You can also download the code from github:
+https://github.com/bethrobson/Head-First-HTML5
 
