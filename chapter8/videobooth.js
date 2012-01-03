@@ -132,8 +132,8 @@ function processFrame(e) {
 	var buffer = bufferCanvas.getContext("2d");
 	var display = displayCanvas.getContext("2d");
 
-	buffer.drawImage(video, 0, 0, bufferCanvas.width, displayCanvas.height);
-	var frame = buffer.getImageData(0, 0, bufferCanvas.width, displayCanvas.height);
+	buffer.drawImage(video, 0, 0, bufferCanvas.width, bufferCanvas.height);
+	var frame = buffer.getImageData(0, 0, bufferCanvas.width, bufferCanvas.height);
 	var length = frame.data.length / 4;
 
 	for (var i = 0; i < length; i++) {
