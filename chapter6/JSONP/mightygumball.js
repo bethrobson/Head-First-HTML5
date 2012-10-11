@@ -17,7 +17,7 @@ function handleRefresh() {
 	console.log("here");
 	var url = "http://gumball.wickedlysmart.com" +
 				"?callback=updateSales" +
-				//"&lastreporttime=" + lastReportTime +
+				"&lastreporttime=" + lastReportTime +
 				"&random=" + (new Date()).getTime();
 	var newScriptElement = document.createElement("script");
 	newScriptElement.setAttribute("src", url);

@@ -54,7 +54,7 @@ function makePalette() {
         return x;
     }
     for (i = 0; i <= this.max_iter; i++) {
-        this.palette.push([wrap(7*i), wrap(5*i), wrap(11*i)]);
+        palette.push([wrap(7*i), wrap(5*i), wrap(11*i)]);
     }
 }
 
