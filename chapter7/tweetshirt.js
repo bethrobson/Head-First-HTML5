@@ -159,8 +159,8 @@ function splitIntoLines(str) {
 	strs[1] = str.substring(space+1);
 	if (strs[1].length > 60) {
 		space = strs[1].indexOf(' ', 60);
-		strs[1] = strs[1].substring(space+1);
-		strs[2] = strs[1].substring(0, space);
+		strs[2] = strs[1].substring(space+1);
+		strs[1] = strs[1].substring(0, space);
 	}
 	return strs;
 }

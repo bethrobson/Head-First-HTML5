@@ -146,7 +146,8 @@ function processFrame(e) {
 	}
 	display.putImageData(frame, 0, 0);
 
-	setTimeout(processFrame, 0);
+	//setTimeout(processFrame, 0);
+	requestAnimationFrame(processFrame);
 
 }
 
