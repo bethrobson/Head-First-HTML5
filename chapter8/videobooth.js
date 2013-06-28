@@ -146,8 +146,9 @@ function processFrame(e) {
 	}
 	display.putImageData(frame, 0, 0);
 
-	//setTimeout(processFrame, 0);
-	requestAnimationFrame(processFrame);
+	setTimeout(processFrame, 0);
+	// try this line instead of the setTimeout above if you are on Chrome
+	//requestAnimationFrame(processFrame);
 
 }
 
