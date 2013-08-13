@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<link rel="icon"
+	  type="image/ico"
+	  href="http://wickedlysmart.com/favicon.ico">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+<meta charset="utf-8">
+<title>Geo Speed Test</title>
+<script>
+var options = {
+	enableHighAccuracy: true, 
+	timeout:100, 
+	maximumAge: 0
+};
+
+window.onload = getMyLocation;
+
+function getMyLocation() {
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(
+			displayLocation, 
+			displayError,
+			options);
+	}
+	else {
+		alert("Oops, no geolocation support");
+	}
+}
+
+function displayError(error) {
+	var errorTypes = {
+		0: "Unknown error",
+		1: "Permission denied",
+		2: "Position is not available",
+		3: "Request timeout"
+	};
+	var errorMessage = errorTypes[error.code];
+	if (errorTypes[error.code] == 0 || errorTypes[error.code] == 2) {
+		errorMessage = errorMessage + " " + error.message;
+	}
+	var div = document.getElementById("location");
+	div.innerHTML = errorMessage;
+
+	if (errorTypes[error.code] == 1) {
+		return;
+	}
+	options.timeout += 100;
+	if (options.timeout > 5000) {
+		return;
+	} else {
+		navigator.geolocation.getCurrentPosition(
+			displayLocation, 
+			displayError,
+			options);
+		div.innerHTML += " ... checking again with timeout=" + options.timeout;
+	}
+}
+
+function displayLocation(position) {
+	var latitude = position.coords.latitude;
+	var longitude = position.coords.longitude;
+
+	var div = document.getElementById("location");
+	div.innerHTML = "You are at Latitude: " + latitude + ", Longitude: " + longitude;
+	div.innerHTML += " (found in " + options.timeout + " milliseconds)";
+}
+</script>
+</head>
+<body>
+<div id="location">
+</div>
+</body>
+</html>
+
