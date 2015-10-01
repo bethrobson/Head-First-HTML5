@@ -129,7 +129,7 @@ function watchLocation() {
 }
 
 function clearWatch() {
-	if (watchId) {
+	if (watchId != null) {
 		navigator.geolocation.clearWatch(watchId);
 		watchId = null;
 	}
