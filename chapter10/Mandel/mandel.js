@@ -67,7 +67,7 @@ function startWorkers() {
 	for (var i = 0; i < workers.length; i++) {
 		var worker = workers[i];
 		if (worker.idle) {
-			var task = createTask(nextRow);
+			var task = createTask(nextRow, generation);
 			worker.idle = false;
 			worker.postMessage(task);
 			nextRow++;
@@ -101,7 +101,7 @@ function reassignWorker(worker) {
 	if (row >= canvas.height) {
 		worker.idle = true;
 	} else {
-		var task = createTask(row);
+		var task = createTask(row, generation);
 		worker.idle = false;
 		worker.postMessage(task);
 	}
