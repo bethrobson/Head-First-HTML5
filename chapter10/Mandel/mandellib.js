@@ -25,7 +25,7 @@ var palette = [];
 //
 // packages up the data we need to send to the worker
 //
-function createTask(row) {
+function createTask(row, generation) {
 	var task = {
 		row: row,				// row number we're working on
 		width: rowData.width,   // width of the ImageData object to fill
