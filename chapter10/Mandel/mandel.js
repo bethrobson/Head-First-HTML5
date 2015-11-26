@@ -20,7 +20,7 @@ function init() {
 	//  values to the click handler.
 	//
 	canvas.onclick = function(event) {
-		handleClick(event.clientX, event.clientY);
+		handleClick(event.x, event.y);
 	};
 	//
 	// When you resize the browser window, we need
