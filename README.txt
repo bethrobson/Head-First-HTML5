@@ -15,7 +15,7 @@ Chapter 7: The Canvas - Bring out your Inner Artist
 Chapter 8: Video (with special guest, The Canvas) - Not Your Father's TV
 Chapter 9: A Little More Closet Space - Web Storage
 Chapter 10: Putting JavaScript to Work - Web Workers
-Appendix: Stuff we didn't cover, where to go from here
+Appendix: Stuff we didn't cover, where to go from here.
 
 http://wickedlysmart.com/hfhtml5/
 
